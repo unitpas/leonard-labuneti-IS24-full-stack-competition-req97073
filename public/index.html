@@ -58,7 +58,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="methodology" class="form-label">Methodology</label>
-                                <select class="form-select" aria-label="Methodology" required v-model="product.methodology">
+                                <select class="form-select" aria-label="Methodology" required
+                                    v-model="product.methodology">
                                     <option value="Agile">Agile</option>
                                     <option value="Waterfall">Waterfall</option>
                                 </select>
@@ -102,14 +103,14 @@
                     <th scope="col">Scrum Master Name</th>
                     <th scope="col">Start Date</th>
                     <th scope="col">Methodology</th>
-                    <th scope="col" style="min-width:150px">Actions</th>
+                    <th scope="col" style="min-width:155px">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="product in displayProducts" :key="product.productId">
                     <th scope="row">{{product.productId}}</th>
-                    <td>{{product.productName}}</td>
-                    <td>{{product.productOwnerName}}</td>
+                    <td>{{ product.productName }}</td>
+                    <td>{{ product.productOwnerName }}</td>
                     <td>{{ Array.isArray(product.Developers) ? product.Developers.join(', ') : product.Developers}}
                     </td>
                     <td>{{ product.scrumMasterName }}</td>
@@ -120,7 +121,6 @@
                         <button @click="deleteProduct(product)" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
-
             </tbody>
         </table>
 
@@ -128,7 +128,7 @@
             <div class="col">
                 Total rows: {{displayProducts.length}}
             </div>
-        </div>        
+        </div>
 
     </div>
     <script src="js/app.js"></script>
